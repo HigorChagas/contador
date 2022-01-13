@@ -3,10 +3,11 @@ const diminuir = document.querySelector('#diminuir');
 const resetar = document.querySelector('#resetar');
 const aumentar = document.querySelector('#aumentar');
 
+
 let index = 0;
 
 aumentar.addEventListener('click', () => {
-    contador.innerText = index++;
+    contador.innerText = ++index;
     if(index > 0) {
         contador.classList.add('contador-positivo');
         contador.classList.remove('contador-negativo');
@@ -16,12 +17,15 @@ aumentar.addEventListener('click', () => {
 
 resetar.addEventListener('click', () => {
     index = 0;
-    contador.innerText = index;
-    contador.classList.remove('contador-positivo', 'contador-negativo');
+    if(index === 0) {
+        contador.classList.remove('contador-positivo', 'contador-negativo');
+        contador.innerText = index;
+    }
+    console.log(index);
 });
 
 diminuir.addEventListener('click', () => {
-    contador.innerText = index--;
+    contador.innerText = --index;
     if(index < 0) {
         contador.classList.add('contador-negativo');
         contador.classList.remove('contador-positivo');
