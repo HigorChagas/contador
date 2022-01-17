@@ -65,11 +65,3 @@
     color: #FFF;
     transition: 200ms;
 }
-
-.contador-positivo {
-    color: #53BD5c;
-}
-
-.contador-negativo {
-    color: #CE2424;
-}
